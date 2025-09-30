@@ -262,7 +262,7 @@ p,li, a{
     font-size: 16px;
     border-radius: 25px;
     border: 2px solid var(--CtextoPrincipal);
-    background: #111;
+    background: var(--CfondoPrincipal);
     color: var(--CtextoPrincipal);
     outline: none;
     transition: all 0.3s;
@@ -271,6 +271,8 @@ p,li, a{
 .catalogo-busacador input:focus{
     border-color: var(--Cacento2);
     box-shadow: 0 0 6px var(--Cacento2);
+    background: var(--CfondoPrincipal);
+    color: var(--CtextoPrincipal);
 }
 
 .catalogo-busacador .icono-buscar{
@@ -285,9 +287,8 @@ p,li, a{
 
 .lista-categoria .categorias{
     display: inline-block;
-    padding: 8px 15px;
-    margin: 5px;
-    border: 2px solid var(--CtextoPrincipal);
+    padding: 10px 20px;
+    margin: 8px 15px;
     border-radius: 20px;  
     color: var(--CtextoPrincipal);
     text-decoration: none;
