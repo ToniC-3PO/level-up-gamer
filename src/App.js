@@ -2,10 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './assets/styles.css';
+import './App.css';
 
 // Componentes comunes
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import TargetCursor from './components/Cursor';
 
 // Páginas
 import Home from "./pages/home";
@@ -23,6 +25,10 @@ import Nosotros from "./pages/nosotros";
 function App() {
   return (
     <>
+      <TargetCursor 
+        spinDuration={2}
+        hideDefaultCursor={true}
+      />
       <Navbar />
       <main className="content">
         <Routes>

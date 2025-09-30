@@ -22,7 +22,7 @@ export default function Productos() {
             <h2>Destacados</h2>
             <div className="slider d-flex justify-content-center">
             {productosDestacados.map((producto, i) => (
-                <div className="producto-item item" key={i}>
+                <div className="producto-item item cursor-target" key={i}>
                 <a href="producto.html" className="nombre">
                     <img
                     src={producto.img}
@@ -42,7 +42,7 @@ export default function Productos() {
             <h2>Recomendados para ti</h2>
             <div className="slider d-flex justify-content-center">
             {productosRecomendados.map((producto, i) => (
-                <div className="producto-item item" key={i}>
+                <div className="producto-item item cursor-target" key={i}>
                 <a href="/producto.html" className="nombre">
                     <img
                     src={producto.img}

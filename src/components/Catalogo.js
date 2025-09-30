@@ -31,13 +31,13 @@ export default function Catalogo() {
 
 
             <div class="catalogo-busacador">
-                <input type="text" className="form-control" placeholder="Silla, Mouse, Polera..." value={busqueda} onChange={(y) => setBusqueda(y.target.value)}/>
+                <input type="text" className="form-control cursor-target" placeholder="Silla, Mouse, Polera..." value={busqueda} onChange={(y) => setBusqueda(y.target.value)}/>
             </div>
 
             <div class="categoria-body">
                 {categorias.map((cat) => (
                 <button class="lista-categoria categorias" key={cat.key}
-                    className={`btn ${categoria === cat.key ? "btn-primary" : "btn-outline-primary"}`} onClick={() => setCategoria(cat.key)}>
+                    className={`cursor-target btn ${categoria === cat.key ? "btn-primary" : "btn-outline-primary"}`} onClick={() => setCategoria(cat.key)}>
                 {cat.label}
                 </button>
                 ))}
@@ -58,7 +58,7 @@ export default function Catalogo() {
                             {p.nombre}
                             </Link>
                             <p>${p.precio.toLocaleString("es-CL")}</p>
-                            <button>Agregar al carrito</button>
+                            <button className="cursor-target">Agregar al carrito</button>
                             </div>
                         </div>
                     </div>

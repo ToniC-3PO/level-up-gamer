@@ -1,9 +1,11 @@
-import React from "react";
+
 import "../assets/styles.css";
 
 export default function CarouselNoticias() {
     return (
         <div className="container-fluid">
+
+
         <div id="carouselNoticias" className="carousel slide carousel-fade" data-bs-ride="carousel">
             <div className="carousel-indicators">
                 <button type="button" data-bs-target="#carouselNoticias" data-bs-slide-to="0" aria-label="Slide 1"></button>
@@ -56,11 +58,11 @@ export default function CarouselNoticias() {
             </div>
 
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselNoticias" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="carousel-control-prev-icon cursor-target" aria-hidden="true"></span>
             <span className="visually-hidden">Anterior</span>
             </button>
             <button className="carousel-control-next" type="button" data-bs-target="#carouselNoticias" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="carousel-control-next-icon cursor-target" aria-hidden="true"></span>
             <span className="visually-hidden">Siguiente</span>
             </button>
         </div>

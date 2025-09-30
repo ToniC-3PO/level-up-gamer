@@ -221,7 +221,7 @@ p,li, a{
 }
 .item:hover {
     transform: scale(1.05);
-    cursor: pointer;
+    cursor: none;
 }
 
 
@@ -361,7 +361,7 @@ p,li, a{
     font:bold var(--FtextoPrincipal) ,sans-serif;
     border: none;
     border-radius: 12px;
-    cursor: pointer;
+    cursor: none;
     transition: all 0.3s;
 }
 
@@ -412,7 +412,7 @@ p,li, a{
     color: white;
     font-weight: bold;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: none;
 }
 
 .tarjeta-producto div button:hover {
@@ -428,12 +428,12 @@ p,li, a{
     color: var(--CtextoPrincipal);
 }
 
-    #total button {
+#total button {
     margin: 10px;
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: none;
     font-weight: bold;
 }
 
@@ -481,7 +481,7 @@ p,li, a{
     font-weight: bold;
     text-shadow: none; 
     transition: text-shadow 0.3s, color 0.3s;
-    cursor: default;
+    cursor: none;
 }
 
 .puntos:hover {
@@ -503,7 +503,7 @@ p,li, a{
     border: none;
     background-color: var(--Cacento1);
     color: #fff;
-    cursor: pointer;
+    cursor: none;
     transition: box-shadow 0.2s;
 }
 
@@ -517,7 +517,7 @@ p,li, a{
     background-color: var(--Cacento1);
     color: #fff;
     border: none;
-    cursor: pointer;
+    cursor: none;
     border-radius: 6px;
     transition: box-shadow 0.3s;
 }
@@ -562,7 +562,7 @@ p,li, a{
     border: none;
     color: white;
     border-radius: 6px;
-    cursor: pointer;
+    cursor: none;
     transition: box-shadow 0.2s;
 }
 
@@ -578,7 +578,7 @@ p,li, a{
 .puntaje span {
     font-size: 24px;
     color: #555;
-    cursor: pointer;
+    cursor: none;
     transition: color 0.2s;
 }
 
@@ -640,7 +640,7 @@ form button { /*** revisar**/
     border-radius: 15px;
     color: var(--CtextoPrincipal);
     font-weight: bold;
-    cursor: pointer;
+    cursor: none;
 }
 
 form button:hover {
@@ -684,7 +684,7 @@ form a:hover {
 }
 
 .password-container img.icon {
-    cursor: pointer;
+    cursor: none;
     height: 30px;
     width: 30px;
     object-fit: contain;

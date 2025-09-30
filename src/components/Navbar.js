@@ -23,30 +23,30 @@ export default function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item"><a className="nav-link active" href="/">Inicio</a></li>
-                <li className="nav-item"><a className="nav-link active" href="/Nosotros">Sobre Nosotros</a></li>
-                <li className="nav-item"><a className="nav-link active" href="https://wa.me/56225555555">Servicio Técnico</a></li>
+                <li className="nav-item"><a className="nav-link active cursor-target" href="/">Inicio</a></li>
+                <li className="nav-item"><a className="nav-link active cursor-target" href="/Nosotros">Sobre Nosotros</a></li>
+                <li className="nav-item"><a className="nav-link active cursor-target" href="https://wa.me/56225555555">Servicio Técnico</a></li>
                 <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a className="nav-link dropdown-toggle active cursor-target" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Novedades gamer
                 </a>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="/News&Blogs">Principales</a></li>
-                    <li><a className="dropdown-item" href="/blogs">Blogs</a></li>
-                    <li><a className="dropdown-item" href="/noticias">Noticias</a></li>
-                    <li><a className="dropdown-item" href="/eventos">Eventos</a></li>
+                    <li><a className="dropdown-item cursor-target" href="/News&Blogs">Principales</a></li>
+                    <li><a className="dropdown-item cursor-target" href="/blogs">Blogs</a></li>
+                    <li><a className="dropdown-item cursor-target" href="/noticias">Noticias</a></li>
+                    <li><a className="dropdown-item cursor-target" href="/eventos">Eventos</a></li>
                 </ul>
                 </li>
-                <li className="nav-item"><a className="nav-link active" href="/Catalogo">Catálogo</a></li>
+                <li className="nav-item"><a className="nav-link active cursor-target" href="/Catalogo">Catálogo</a></li>
             </ul>
 
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                <a className="nav-link active" href="/carrito">
+                <a className="nav-link active cursor-target" href="/carrito">
                     <img src={carro} alt="Carrito" />
                 </a>
                 </li>
-                <li className="nav-item"><a className="nav-link active" href="/login">Iniciar sesión</a></li>
+                <li className="nav-item"><a className="nav-link active cursor-target" href="/login">Iniciar sesión</a></li>
             </ul>
             </div>
         </div>

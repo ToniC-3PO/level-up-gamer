@@ -46,9 +46,9 @@ export default function Nosotros() {
                     nuestros clientes más fieles.
                     <br />
                     Puedes escribirnos a nuestro correo{" "}
-                    <a href="mailto:info@levelupgamer.com">info@levelupgamer.com</a>{" "}
+                    <a href="mailto:info@levelupgamer.com" className="cursor-target">info@levelupgamer.com</a>{" "}
                     o si necesitas ayuda contamos con un servicio técnico al{" "}
-                    <a href="https://wa.me/56225555555" target="_blank" className="footer-link" rel="noreferrer">+56225555555</a>.
+                    <a href="https://wa.me/56225555555" target="_blank" className="footer-link cursor-target" rel="noreferrer">+56225555555</a>.
                 </p>
             </div>
         </div>
