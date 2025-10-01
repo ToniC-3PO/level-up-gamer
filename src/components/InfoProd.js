@@ -32,7 +32,7 @@ export default function InfoProd() {
 
         <div className="row producto-detalle">
             <div className="col-md-6">
-            <img src={producto.imagen} alt={producto.nombre} className="img-fluid" />
+                <img src={producto.imagen} alt={producto.nombre} className="img-fluid" />
             </div>
             <div className="col-md-6">
             <h1>{producto.nombre}</h1>

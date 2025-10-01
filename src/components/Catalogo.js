@@ -26,34 +26,34 @@ export default function Catalogo() {
     });
 
     return (
-        <section className="container" class="catalogo">
+        <section className="catalogo">
             <h1>Catalogo</h1>
 
 
-            <div class="catalogo-busacador">
+            <div className="catalogo-busacador">
                 <input type="text" className="form-control cursor-target" placeholder="Silla, Mouse, Polera..." value={busqueda} onChange={(y) => setBusqueda(y.target.value)}/>
             </div>
 
-            <div class="categoria-body">
+            <div className="categoria-body">
                 {categorias.map((cat) => (
-                <button class="lista-categoria categorias" key={cat.key}
-                    className={`cursor-target btn ${categoria === cat.key ? "btn-primary" : "btn-outline-primary"}`} onClick={() => setCategoria(cat.key)}>
+                <button key={cat.key}
+                    className={`lista-categoria categorias cursor-target btn ${categoria === cat.key ? "btn-primary" : "btn-outline-primary"}`} onClick={() => setCategoria(cat.key)}>
                 {cat.label}
                 </button>
                 ))}
             </div>
 
-            <div className="row" class="productos">
+            <div className="productos">
                 {productosFiltrados.length === 0 ? (
                 <p>No se encontró el producto</p>
                 ) : (
                 productosFiltrados.map((p) => (
-                    <div class="producto-item" key={p.id}>
+                    <div className="producto-item cursor-target" key={p.id}>
                         <div>
                             <Link to={`/producto/${p.id}`}>
                             <img src={p.imagen} alt={p.nombre} width="200" height="200"/>
                             </Link>
-                            <div className="card-body">
+                            <div className="card-body cursor-target">
                             <Link to={`/producto/${p.id}`} className="nombre">
                             {p.nombre}
                             </Link>
