@@ -236,6 +236,22 @@ p,li, a{
     font-weight: bold;
 }
 
+.boton-filtro{
+    background: none;
+    color: var(--CtextoSecundario);
+    padding: 20px;
+    border: none;
+    margin-top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.boton-filtro :hover{ /* revisar */
+    color: var(--CtextoPrincipal);
+    text-shadow: var(--Cacento2) 0px 0px 8px;
+}
+
 .catalogo{
     max-width: 1200px;
     margin: 0 auto;

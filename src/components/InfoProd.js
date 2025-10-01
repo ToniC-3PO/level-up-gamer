@@ -37,36 +37,28 @@ export default function InfoProd() {
             <div className="col-md-6">
             <h1>{producto.nombre}</h1>
             <p>{producto.descripcion}</p>
-            <p className="fw-bold">${producto.precio.toLocaleString("es-CL")}</p>
-            <p>{producto.puntos} puntos Level-Up</p>
+            <p className="precio">${producto.precio.toLocaleString("es-CL")}</p>
+            <p className="puntos">{producto.puntos} puntos Level-Up</p>
 
-            <div className="d-flex align-items-center gap-3 my-3">
-                <button
-                className="btn btn-outline-secondary"
-                onClick={() => setCantidad((c) => Math.max(1, c - 1))}
-                >
-                -
-                </button>
+            <div className="cantidad-compra">
+                <button className="btn" onClick={() => setCantidad((c) => Math.max(1, c - 1))}>
+                - </button>
                 <span>{cantidad}</span>
-                <button
-                className="btn btn-outline-secondary"
-                onClick={() => setCantidad((c) => c + 1)}
-                >
-                +
-                </button>
+                <button className="btn" onClick={() => setCantidad((c) => c + 1)}>
+                + </button>
             </div>
 
-            <button className="btn btn-success">Agregar al carrito</button>
+            <button className="btn btn-success" id="agregar-carrito">Agregar al carrito</button>
             </div>
         </div>
 
 
-        <div className="mt-5">
+        <div className="calificaciones-comentarios">
             <h3>Calificaciones</h3>
             <p>{"⭐".repeat(producto.rating)}{"☆".repeat(5 - producto.rating)} ({producto.rating}/5)</p>
         </div>
 
-        <div className="mt-4">
+        <div className="comentarios">
             <h3>Comentarios</h3>
             {comentarios.map((c, i) => (
             <div key={i} className="mb-2">
@@ -75,7 +67,7 @@ export default function InfoProd() {
             </div>
             ))}
 
-            <form onSubmit={handleAgregarComentario} className="mt-3">
+            <form onSubmit={handleAgregarComentario} className="agregar-comentario">
             <label htmlFor="nuevo-comentario">Deja tu comentario:</label>
             <textarea
                 id="nuevo-comentario"
