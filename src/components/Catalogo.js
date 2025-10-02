@@ -31,7 +31,7 @@ export default function Catalogo() {
 
 
             <div className="catalogo-busacador">
-                <input type="text" className="form-control cursor-target" placeholder="Silla, Mouse, Polera..." value={busqueda} onChange={(y) => setBusqueda(y.target.value)}/>
+                <input type="text" className="form-control cursor-target" value={busqueda} onChange={(y) => setBusqueda(y.target.value)}/>
             </div>
 
             <div className="categoria-body">

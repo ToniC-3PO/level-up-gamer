@@ -197,16 +197,31 @@ p,li, a{
     overflow-x: auto;
     scroll-behavior: smooth;
     padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+    position: relative;
 }
 
 .slider::-webkit-scrollbar {
-    height: 8px;
+    display: none;
 }
 
 .slider::-webkit-scrollbar-thumb {
     background-color: var(--FtextoEncabezado);
-    border-radius: 4px;
+    display: none;
 }
+
+.custom-progress {
+    height: 8px;
+    background-color: var(--CfondoPrincipal); /* fondo oscuro */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.custom-progress-bar {
+    background: linear-gradient(90deg, var(--Cacento2), var(--Cacento1)); /* degradado gamer */
+    animation: moveStripe 2s linear infinite;
+}
+
 
 /* ITEM INDIVIDUAL */
 .item {
@@ -341,7 +356,6 @@ p,li, a{
 }
 
 .producto-item {
-    width: 100%;
     border-radius: 12px;
     transition: transform 0.3s;
 }
@@ -349,13 +363,14 @@ p,li, a{
 .producto-item .producto-img img:hover{
     transform: scale(1.05);
     filter: drop-shadow(0 0 3px var(--Cacento2));
+    cursor: none;
 }
 
 .producto-item .nombre{
     font-family: var(--FtextoEncabezado);
     color: var(--CtextoPrincipal);
     display: block;
-    margin: 10px 0;
+    margin: 20px 0;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -551,6 +566,11 @@ p,li, a{
 .calificaciones-comentarios h3 {
     margin-bottom: 10px;
     color: var(--CtextoPrincipal);
+}
+
+.start{
+    cursor: "none";
+    transition: "color 0.2s";
 }
 
 .comentario {

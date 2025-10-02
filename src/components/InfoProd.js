@@ -10,6 +10,9 @@ export default function InfoProd() {
         { usuario: "Usuario1", texto: "¡Excelente producto, llegó rápido!", rating: 4 },
         { usuario: "Usuario2", texto: "Buen precio y calidad, lo recomiendo.", rating: 4 },
     ]);
+
+
+    const [nuevoRating, setNuevoRating] = useState(0);
     const [nuevoComentario, setNuevoComentario] = useState("");
 
     if (!producto) return <p>Producto no encontrado</p>;
@@ -19,65 +22,75 @@ export default function InfoProd() {
         if (!nuevoComentario.trim()) return;
         setComentarios([
         ...comentarios,
-        { usuario: "Anónimo", texto: nuevoComentario, rating: 5 },
+        { usuario: "Anónimo", texto: nuevoComentario, rating: nuevoRating || 5 },
         ]);
         setNuevoComentario("");
+        setNuevoRating(0);
     };
 
     return (
-        <section className="container my-4">
-        <div className="mb-3">
-            <Link to="/catalogo" className="btn btn-link">← Volver al catálogo</Link>
+        <section className="container-fluid">
+        <div className="more-blogs">
+            <Link className="volver-link cursor-target" to="/catalogo">Catálogo</Link>
         </div>
 
-        <div className="row producto-detalle">
-            <div className="col-md-6">
-                <img src={producto.imagen} alt={producto.nombre} className="img-fluid" />
+        <div className="producto-detalle">
+            <div className="imagen-producto">
+            <img src={producto.imagen} alt={producto.nombre} />
             </div>
-            <div className="col-md-6">
+
+            <div className="info-producto">
             <h1>{producto.nombre}</h1>
-            <p>{producto.descripcion}</p>
+            <p className="descripcion">{producto.descripcion}</p>
             <p className="precio">${producto.precio.toLocaleString("es-CL")}</p>
             <p className="puntos">{producto.puntos} puntos Level-Up</p>
 
             <div className="cantidad-compra">
-                <button className="btn" onClick={() => setCantidad((c) => Math.max(1, c - 1))}>
-                - </button>
-                <span>{cantidad}</span>
-                <button className="btn" onClick={() => setCantidad((c) => c + 1)}>
-                + </button>
+                <button onClick={() => setCantidad((c) => Math.max(1, c - 1))}>-</button>
+                <span id="cantidad">{cantidad}</span>
+                <button onClick={() => setCantidad((c) => c + 1)}>+</button>
             </div>
 
-            <button className="btn btn-success" id="agregar-carrito">Agregar al carrito</button>
+            <button className="cursor-target" id="agregar-carrito" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            Agregar al carrito </button>
             </div>
         </div>
-
 
         <div className="calificaciones-comentarios">
             <h3>Calificaciones</h3>
-            <p>{"⭐".repeat(producto.rating)}{"☆".repeat(5 - producto.rating)} ({producto.rating}/5)</p>
-        </div>
+            <p>
+            {"⭐".repeat(producto.rating)}
+            {"☆".repeat(5 - producto.rating)} ({producto.rating}/5)
+            </p>
 
-        <div className="comentarios">
             <h3>Comentarios</h3>
             {comentarios.map((c, i) => (
-            <div key={i} className="mb-2">
+            <div key={i} className="comentario">
                 <strong>{c.usuario}:</strong> {c.texto}
                 <p>{"⭐".repeat(c.rating)}{"☆".repeat(5 - c.rating)}</p>
             </div>
             ))}
+        </div>
 
-            <form onSubmit={handleAgregarComentario} className="agregar-comentario">
+        <div className="cursor-target">
+            <form onSubmit={handleAgregarComentario} className="agregar-comentario container-fluid">
             <label htmlFor="nuevo-comentario">Deja tu comentario:</label>
+            <div className="puntaje">
+            {[5, 4, 3, 2, 1].map((star) => (
+                <span key={star} className="stars" style={{color: star <= nuevoRating ? "lime" : "gray", fontSize: "30px"}} onClick={() => setNuevoRating(star)}
+                >
+                ★
+                </span>
+            ))}
+            </div>
             <textarea
                 id="nuevo-comentario"
-                className="form-control"
                 rows="3"
+                placeholder="Escribe tu comentario aquí..."
                 value={nuevoComentario}
                 onChange={(e) => setNuevoComentario(e.target.value)}
-                placeholder="Escribe tu comentario aquí..."
             />
-            <button type="submit" className="btn btn-primary mt-2">Publicar</button>
+            <button className="cursor-target" type="submit">Publicar</button>
             </form>
         </div>
         </section>
