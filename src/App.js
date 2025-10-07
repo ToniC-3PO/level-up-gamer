@@ -18,7 +18,7 @@ import Carrito from "./pages/carrito";
 import Producto from "./pages/producto";
 import Noticias from "./pages/noticias";
 import Blogs from "./pages/blogs";
-import NewsBlogs from "./pages/newsblogs";
+import Novedad from "./pages/novedadesp";
 import Eventos from "./pages/eventos";
 import Nosotros from "./pages/nosotros";
 
@@ -40,7 +40,7 @@ function App() {
           <Route path="/producto/:id" element={<Producto />} />
           <Route path="/noticias" element={<Noticias />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/newsblogs" element={<NewsBlogs />} />
+          <Route path="/novedadesp" element={<Novedad />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/nosotros" element={<Nosotros />} />
         </Routes>
