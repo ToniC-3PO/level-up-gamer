@@ -11,15 +11,23 @@ import TargetCursor from './components/Cursor';
 
 // Páginas
 import Home from "./pages/home";
-import Catalogo from "./pages/catalogo";
 import Login from "./pages/login";
 import NewAccount from "./pages/newaccount";
+
+import Catalogo from "./pages/catalogo";
 import Carrito from "./pages/carrito";
 import Producto from "./pages/producto";
+
+import Novedadesp from "./pages/novedadesp";
 import Noticias from "./pages/noticias";
+import Noticia from "./pages/noticia"; 
+
 import Blogs from "./pages/blogs";
-import Novedad from "./pages/novedadesp";
+import Blog from "./pages/blog";
+
 import Eventos from "./pages/eventos";
+import Evento from "./pages/evento";
+
 import Nosotros from "./pages/nosotros";
 
 function App() {
@@ -38,10 +46,13 @@ function App() {
           <Route path="/newaccount" element={<NewAccount />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/producto/:id" element={<Producto />} />
+          <Route path="/novedadesp" element={<Novedadesp />} />
           <Route path="/noticias" element={<Noticias />} />
+          <Route path="/noticia/:id" element={<Noticia />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/novedadesp" element={<Novedad />} />
+          <Route path="/blog/:id" element={<Blog />} />
           <Route path="/eventos" element={<Eventos />} />
+          <Route path="/evento/:id" element={<Evento />} />
           <Route path="/nosotros" element={<Nosotros />} />
         </Routes>
       </main>

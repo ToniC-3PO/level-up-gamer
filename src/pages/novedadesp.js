@@ -1,9 +1,9 @@
-import Novedadec from "../components/Novedades";
+import Novedades from "../components/Novedades";
 
 export default function Novedadesp() {
     return(
         <>
-        <Novedadec />
+        <Novedades />
         </>
     );
 }

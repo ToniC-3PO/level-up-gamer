@@ -31,7 +31,7 @@ export default function Navbar() {
                     Novedades gamer
                 </a>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item cursor-target" href="/News&Blogs">Principales</a></li>
+                    <li><a className="dropdown-item cursor-target" href="/novedadesp">Principales</a></li>
                     <li><a className="dropdown-item cursor-target" href="/blogs">Blogs</a></li>
                     <li><a className="dropdown-item cursor-target" href="/noticias">Noticias</a></li>
                     <li><a className="dropdown-item cursor-target" href="/eventos">Eventos</a></li>
