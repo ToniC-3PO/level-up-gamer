@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import productos from "../datos/dataP";
+import agregarCarrito from "../assets/utils/agregarCarrito";
 
 export default function InfoProd() {
     const { id } = useParams();
@@ -51,7 +52,9 @@ export default function InfoProd() {
                 <button onClick={() => setCantidad((c) => c + 1)}>+</button>
             </div>
 
-            <button className="cursor-target" id="agregar-carrito" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <button className="cursor-target" id="agregar-carrito" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });
+                agregarCarrito(producto, cantidad);
+                }}>
             Agregar al carrito </button>
             </div>
         </div>

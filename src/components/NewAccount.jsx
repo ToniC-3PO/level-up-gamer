@@ -1,5 +1,7 @@
 import "../assets/styles.css";
 import { Link } from "react-router-dom";
+import { Validaciones } from "../assets/utils/Validaciones";
+import { ojito } from "../assets/utils/ojito";
 
 export default function NewAccount() {
     return (
