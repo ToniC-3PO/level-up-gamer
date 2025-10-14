@@ -79,3 +79,8 @@
 }
 
 
+@media (max-width: 768px) {
+  .target-cursor-wrapper {
+    display: none; /* Desactiva completamente el cursor en móviles */
+  }
+}

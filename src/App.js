@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './assets/styles.css';
@@ -31,12 +32,40 @@ import Evento from "./pages/evento";
 import Nosotros from "./pages/nosotros";
 
 function App() {
+
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    const hasTouch =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0;
+
+    setIsTouchDevice(hasTouch);
+  }, []);
+
+  useEffect(() => {
+  const handleTap = (e) => {
+    const ripple = document.createElement("div");
+    ripple.className = "tap-ripple";
+    ripple.style.left = `${e.clientX}px`;
+    ripple.style.top = `${e.clientY}px`;
+    ripple.style.width = ripple.style.height = "40px";
+    document.body.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  };
+
+  if (isTouchDevice) {
+    window.addEventListener("touchstart", handleTap);
+    return () => window.removeEventListener("touchstart", handleTap);
+  }
+}, [isTouchDevice]);
+
   return (
     <>
-      <TargetCursor 
-        spinDuration={2}
-        hideDefaultCursor={true}
-      />
+      {!isTouchDevice && (
+        <TargetCursor spinDuration={2} hideDefaultCursor={true} />
+      )}
       <Navbar />
       <main className="content">
         <Routes>
