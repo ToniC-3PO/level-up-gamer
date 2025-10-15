@@ -1,6 +1,5 @@
-function Validaciones() {
-            
-            
+
+export default function Validaciones() {
             
             //Correo
             var email = document.getElementById('exampleInputEmail2').value;
@@ -11,8 +10,6 @@ function Validaciones() {
             if(valido==true){
                 //alert("Correo valido");
                 
-
-
             }else{
                 alert("Correo Invalido");
                 
@@ -62,18 +59,12 @@ function Validaciones() {
                 //alert("eres mayor de edad");
                 edad = true;
                 
-
             }else{
                 alert("Tiene que ser mayor de edad");
   
             }
 
-             if (acty.getDate() ==cumple.getDate() && acty.getDate() ==cumple.getDate() ){ //Cambiar el wtf is that
-                 alert("Feliz Cumpleaños! ten x puntos");
-                 puntos=+1 
-                }else{
 
-                }
 
             var si = valido && validpass && validConfipass && edad;
 
@@ -81,14 +72,9 @@ function Validaciones() {
                 alert("Cuenta Creada");
                 return true;
 
-
             }else{
                 return false;
             }
-
-            
-
-
         } 
     
         
