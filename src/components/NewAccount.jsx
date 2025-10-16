@@ -1,9 +1,27 @@
 import "../assets/styles.css";
 import { Link } from "react-router-dom";
-import Validaciones from "../assets/utils/Validaciones";
+import { validarFormulario } from "../assets/utils/Validaciones";
 import ojito  from "../assets/utils/ojito";
 
 export default function NewAccount() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = {
+      email: document.getElementById("exampleInputEmail2").value,
+      password: document.getElementById("InputPassword2").value,
+      confirmPassword: document.getElementById("InputPassword2.1").value,
+      birthDay: document.getElementById("FechNac").value,
+    };
+
+    const errors = validarFormulario(formData);
+
+    if (Object.keys(errors).length === 0) {
+      alert("✅ Cuenta creada");
+    } else {
+      alert("⚠️ Corrige los errores:\n" + JSON.stringify(errors, null, 2));
+    }
+  };
     
     return (
     <div> 
@@ -19,7 +37,7 @@ export default function NewAccount() {
                 <label htmlfor="InputPassword2" className="form-label">Contraseña:</label>
                 <div className="password-container">
                     <input type="password" className="form-control" id="InputPassword2" aria-describedby="passwordHelpInline" required/>
-                    <img src="assets/fotos/icons/eye_closed.png" id="coniconMostrar" className="icon" onClick={ojito()} alt="Mostrar contraseña"/>
+                    <img src="assets/fotos/icons/eye_closed.png" id="coniconMostrar" className="icon" onClick={ojito} alt="Mostrar contraseña"/>
                 </div>
                 <div id="passwordHelpBlock" className="form-text">Condición contraseña</div>
             </div>
@@ -54,7 +72,7 @@ export default function NewAccount() {
                         <li ><Link to="/login">Ya tienes una cuenta</Link></li>
                     </ul>
             </div>
-            <button type="submit" className="btn btn-primary" onClick={Validaciones()}>Crear</button>
+            <button type="button" className="btn btn-primary" onClick={handleSubmit}>Crear</button>
         </form>
     </div>
     );

@@ -1,5 +1,5 @@
-import ojoA from "/../assets/fotos/icons/eye_open";
-import ojoC from "/../";
+import ojoA from "../fotos/icons/eye_open.png";
+import ojoC from "../fotos/icons/eye_closed.png";
 
 export default function ojito(){
         let flag = true;
