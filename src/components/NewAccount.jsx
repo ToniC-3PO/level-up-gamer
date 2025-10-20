@@ -1,7 +1,9 @@
 import "../assets/styles.css";
 import { Link } from "react-router-dom";
 import { validarFormulario } from "../assets/utils/Validaciones";
-import ojito  from "../assets/utils/ojito";
+import ojito from "../assets/utils/ojito";
+import ojoA from "../assets/fotos/icons/eye_open.png";
+import ojoC from "../assets/fotos/icons/eye_closed.png";
 
 export default function NewAccount() {
   const handleSubmit = (e) => {
@@ -37,7 +39,7 @@ export default function NewAccount() {
                 <label htmlfor="InputPassword2" className="form-label">Contraseña:</label>
                 <div className="password-container">
                     <input type="password" className="form-control" id="InputPassword2" aria-describedby="passwordHelpInline" required/>
-                    <img src="assets/fotos/icons/eye_closed.png" id="coniconMostrar" className="icon" onClick={ojito} alt="Mostrar contraseña"/>
+                    <img src={ojoC} id="coniconMostrar" className="icon" onClick={ojito} alt="Mostrar contraseña"/>
                 </div>
                 <div id="passwordHelpBlock" className="form-text">Condición contraseña</div>
             </div>
