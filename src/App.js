@@ -22,14 +22,14 @@ import Carrito from "./pages/carrito";
 import Producto from "./pages/producto";
 
 import Novedadesp from "./pages/novedadesp";
-import Noticias from "./pages/noticias";
-import Noticia from "./pages/noticia"; 
+import Noticias from "./pages/noticiasG/noticias";
+import Noticia from "./pages/noticiasG/noticia"; 
 
-import Blogs from "./pages/blogs";
-import Blog from "./pages/blog";
+import Blogs from "./pages/blogsG/blogs";
+import Blog from "./pages/blogsG/blog";
 
-import Eventos from "./pages/eventos";
-import Evento from "./pages/evento";
+import Eventos from "./pages/eventosG/eventos";
+import Evento from "./pages/eventosG/evento";
 
 import Nosotros from "./pages/nosotros";
 

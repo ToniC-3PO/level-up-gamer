@@ -1,4 +1,4 @@
-import InfoEvento from "../components/organisms/InfoEvento"
+import InfoEvento from "../../components/organisms/InfoEvento"
 
 export default function Evento() {
     return (

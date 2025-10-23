@@ -4,6 +4,8 @@ import "../assets/styles.css";
 import eventos from "../datos/dataEventos";
 
 export default function Eventoc() {
+    const sortedData = [...eventos].sort((a, b) => b.id - a.id);
+
     return (
         <section className="eventos-section">
         <div className="container-fluid">
@@ -12,10 +14,10 @@ export default function Eventoc() {
                     <h2 className="eventos-titulo">Eventos</h2>
                 </div>
                 <div className="body-eventos">
-                    {eventos.length === 0 ? (
+                    {sortedData.length === 0 ? (
                     <p>No hay eventos disponibles</p>
                     ) : (
-                    eventos.map((e) => (
+                    sortedData.map((e) => (
                     <article className="dia-evento cursor-target" key={e.id}>
                         <span className="evento-date">{e.fecha}</span>
                         <div>
