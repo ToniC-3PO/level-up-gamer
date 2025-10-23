@@ -1,6 +1,7 @@
 import { useState } from "react";
 import productos from "../datos/dataP";
 import { Link } from "react-router-dom";
+import agregarCarrito from "../assets/utils/agregarCarrito";
 
 export default function Catalogo() {
     const [busqueda, setBusqueda] = useState("");
@@ -58,7 +59,8 @@ export default function Catalogo() {
                             {p.nombre}
                             </Link>
                             <p>${p.precio.toLocaleString("es-CL")}</p>
-                            <button className="cursor-target">Agregar al carrito</button>
+                            <button className="cursor-target" id="agregar-carrito" onClick={() =>agregarCarrito(p, 1)}
+                            >Agregar al carrito</button>
                             </div>
                         </div>
                     </div>

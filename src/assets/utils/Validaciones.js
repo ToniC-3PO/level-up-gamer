@@ -6,7 +6,7 @@ const errors = {};
   if (!regEmail.test(email)) {
     errors.email = "Correo inválido";
   } else if (email.endsWith("@duocuc.cl")) {
-    errors.email = "Cuenta Duoc detectada";
+    console.log("¡Cuenta Duoc detectada!");
   }
 
   const regPass =

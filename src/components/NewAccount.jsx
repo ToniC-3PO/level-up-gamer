@@ -1,13 +1,14 @@
 import "../assets/styles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { validarFormulario } from "../assets/utils/Validaciones";
 import ojito from "../assets/utils/ojito";
-import ojoA from "../assets/fotos/icons/eye_open.png";
 import ojoC from "../assets/fotos/icons/eye_closed.png";
 import { useState } from "react";
+import { guardarUsuario } from "../datos/dataUser";
 
 export default function NewAccount() {
     const [errors, setErrors] = useState({});
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,11 +24,26 @@ export default function NewAccount() {
         setErrors(errores);
 
         if (Object.keys(errores).length === 0) {
-        alert("Cuenta creada con exito");
-        } else {
-        console.log("Errores detectados:", errores);
+            const usuario = {
+            email: formData.email,
+            password: formData.password,
+            birthDay: formData.birthDay,
+            refCode: document.getElementById("PuntosLevelUp").value || null,
+            };
+
+            const resultado = guardarUsuario(usuario);
+
+            if (resultado.ok) {
+                alert(resultado.mensaje);
+                alert("Cuenta creada con exito");
+                navigate("/login");
+            } else {
+                alert(resultado.mensaje);
+                console.log("Errores detectados:", errores);
+            }
         }
-    };
+        };
+    
     
     return (
     <div> 
