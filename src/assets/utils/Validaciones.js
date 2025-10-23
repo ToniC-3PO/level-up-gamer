@@ -35,7 +35,7 @@ const errors = {};
     if (cumple.getFullYear() < 1900) {
       errors.birthDay = "Ingrese una fecha válida";
     } else if (edad < 18) {
-      errors.birthDay = "Debe ser mayor de edad";
+      errors.birthDay = "Debe ser mayor de 18 año de edad";
     }
   }
   return errors;

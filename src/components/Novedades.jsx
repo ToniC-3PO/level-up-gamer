@@ -19,7 +19,7 @@ export default function Novedades() {
                 <hr className="border border-primary border-3 opacity-75"/>
                 <div className="blogs-body">
                     <div className="last-blogs">
-                    <article className="last-blog">
+                    <article className="last-blog cursor-target">
                         <figure className="last-blog-img">
                         <Link to="/">
                             <img
@@ -34,7 +34,7 @@ export default function Novedades() {
                         </p>
                     </article>
 
-                    <article className="last-blog">
+                    <article className="last-blog cursor-target">
                         <figure className="last-blog-img">
                         <Link to="/">
                             <img
@@ -51,7 +51,7 @@ export default function Novedades() {
                     </div>
 
                     <div className="more-blogs">
-                    <Link className="more-link" to="/blogs">
+                    <Link className="more-link cursor-target" to="/blogs">
                         Más Blogs
                     </Link>
                     </div>
@@ -66,7 +66,7 @@ export default function Novedades() {
                 <hr className="border border-primary border-3 opacity-75" />
                 <div className="news-body">
                     <div className="last-news">
-                    <article className="last-new">
+                    <article className="last-new cursor-target">
                         <figure className="last-news-img">
                         <Link to="/">
                             <img
@@ -81,7 +81,7 @@ export default function Novedades() {
                         </p>
                     </article>
 
-                    <article className="last-new">
+                    <article className="last-new cursor-target">
                         <figure className="last-news-img">
                         <Link to="/">
                             <img
@@ -98,7 +98,7 @@ export default function Novedades() {
                     </div>
 
                     <div className="more-news">
-                    <Link className="more-link" to="/noticias">
+                    <Link className="more-link cursor-target" to="/noticias">
                         Más Noticias
                     </Link>
                     </div>
@@ -110,13 +110,13 @@ export default function Novedades() {
                 <h2>Eventos</h2>
                 <div className="body-fechas">
                     <ul className="fechas-list">
-                    <li className="fechas-bloque">
+                    <li className="fechas-bloque cursor-target">
                         <span className="fecha-evento">01/08/2025</span>
                         <span className="evento-info">
                         <Link to="/">Torneo Smash Ultimate</Link>
                         </span>
                     </li>
-                    <li className="fechas-bloque">
+                    <li className="fechas-bloque cursor-target">
                         <span className="fecha-evento">12/03/2021</span>
                         <span className="evento-info">
                         <Link to="/">Torneo MarvelVSCapcom</Link>
@@ -125,7 +125,7 @@ export default function Novedades() {
                     </ul>
                 </div>
                 <div className="more-eventos">
-                    <Link className="more-link" to="/eventos">
+                    <Link className="more-link cursor-target" to="/eventos">
                     Más Eventos
                     </Link>
                 </div>

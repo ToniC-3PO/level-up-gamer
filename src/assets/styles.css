@@ -38,6 +38,10 @@ body {
     margin: 0;
 }
 
+cursor-off{
+    pointer-events: none;
+}
+
 body > *:not(footer) {
     flex: 1;
 }
@@ -664,6 +668,10 @@ form input:focus {
     border-color: var(--Cacento1) !important;
     box-shadow: 0 0 10px var(--Cacento1) !important;
     outline: none !important;
+}
+
+.form-text {
+    color: #bbb !important;
 }
 
 form button { /*** revisar**/

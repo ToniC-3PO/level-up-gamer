@@ -35,9 +35,9 @@
 .target-cursor-dot {
   position: absolute;
   left: 50%;
-  top: 50%;
-  width: 4px;
-  height: 4px;
+  top: 45%;
+  width: 3px;
+  height: 3px;
   background: #fff;
   border-radius: 50%;
   transform: translate(-50%, -50%);
