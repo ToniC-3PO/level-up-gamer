@@ -4,7 +4,7 @@ export default function Nosotros() {
         <div className="logo-container">
             <label>
             <img
-                src={require("../assets/fotos/Logo_name.png")} alt="Logo name"
+                src={require("../../assets/fotos/Logo_name.png")} alt="Logo name"
             />
             </label>
         </div>
