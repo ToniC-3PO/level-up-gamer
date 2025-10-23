@@ -1,4 +1,4 @@
-import InfoNew from "../components/InfoNew";
+import InfoNew from "../components/organisms/InfoNew";
 
 export default function Noticia(){
     return (

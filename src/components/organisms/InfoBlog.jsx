@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import blogs from "../datos/dataBlogs";
+import blogs from "../../datos/dataBlogs";
 
 export default function InfoBlog() {
     const { id } = useParams();
