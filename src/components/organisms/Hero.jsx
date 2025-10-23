@@ -1,5 +1,3 @@
-import "../assets/styles.css";
-
 export default function Hero() {
     return (
         <header className="hero">

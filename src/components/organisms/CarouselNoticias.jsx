@@ -1,6 +1,3 @@
-
-import "../assets/styles.css";
-
 export default function CarouselNoticias() {
     return (
         <div className="container-fluid">
@@ -17,7 +14,7 @@ export default function CarouselNoticias() {
                 <div className="carousel-item" data-bs-interval="4000">
                     <a href="/noticias">
                     <img
-                        src={require("../assets/fotos/news/onemilliondeltanews.jpg")}
+                        src={require("../../assets/fotos/news/onemilliondeltanews.jpg")}
                         className="d-block w-100 H-100 img-carousel"
                         alt="Noticia 1"
                     />
@@ -31,7 +28,7 @@ export default function CarouselNoticias() {
                 <div className="carousel-item active" data-bs-interval="4000">
                     <a href="/Catalogo">
                     <img
-                        src={require("../assets/fotos/headset-banner.jpeg")}
+                        src={require("../../assets/fotos/headset-banner.jpeg")}
                         className="d-block w-100 img-carousel"
                         alt="Producto nuevo"
                     />
@@ -45,7 +42,7 @@ export default function CarouselNoticias() {
                 <div className="carousel-item" data-bs-interval="4000">
                     <a href="/eventos">
                     <img
-                        src={require("../assets/fotos/eventos/banner-eventos.jpeg")}
+                        src={require("../../assets/fotos/eventos/banner-eventos.jpeg")}
                         className="d-block w-100 img-carousel"
                         alt="Evento gamer"
                     />
