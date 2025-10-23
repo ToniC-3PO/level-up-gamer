@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import logo from "../assets/fotos/Logo_full.png";
+import logo from "../../assets/fotos/Logo_full.png";
 import { useEffect, useState } from "react";
-import carro from "../assets/fotos/icons/carrito.png";
+import carro from "../../assets/fotos/icons/carrito.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
