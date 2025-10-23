@@ -5,6 +5,7 @@ import ojito from "../assets/utils/ojito";
 import ojoC from "../assets/fotos/icons/eye_closed.png";
 import { useState } from "react";
 import { guardarUsuario } from "../datos/dataUser";
+import { toast } from "react-toastify";
 
 export default function NewAccount() {
     const [errors, setErrors] = useState({});
@@ -18,7 +19,7 @@ export default function NewAccount() {
         password: document.getElementById("InputPassword2").value,
         confirmPassword: document.getElementById("InputPassword2.1").value,
         birthDay: document.getElementById("FechNac").value,
-        };
+        };  
 
         const errores = validarFormulario(formData);
         setErrors(errores);
@@ -33,16 +34,18 @@ export default function NewAccount() {
 
             const resultado = guardarUsuario(usuario);
 
-            if (resultado.ok) {
-                alert(resultado.mensaje);
-                alert("Cuenta creada con exito");
+        if (resultado.ok) {
+            toast.success(resultado.mensaje || "Cuenta creada con éxito");
+            
+            setTimeout(() => {
                 navigate("/login");
-            } else {
-                alert(resultado.mensaje);
-                console.log("Errores detectados:", errores);
-            }
+            }, 1500);
+        } else {
+            toast.error(resultado.mensaje || "Error al crear la cuenta");
+            console.log("Errores detectados:", errores);
         }
-        };
+    }
+};
     
     
     return (

@@ -1,7 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'react-toastify/dist/ReactToastify.css';
 import './assets/styles.css';
 import './App.css';
 
@@ -86,6 +88,17 @@ function App() {
         </Routes>
       </main>
       <Footer />
+
+        <ToastContainer 
+        position="bottom-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="colored"
+      />
     </>
   );
 }

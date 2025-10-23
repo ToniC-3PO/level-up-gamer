@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import productos from "../datos/dataP";
 import agregarCarrito from "../assets/utils/agregarCarrito";
+import useCarrito from "../assets/utils/useCarrito";
 
 export default function InfoProd() {
+    const [carrito, updateCarrito] = useCarrito();
     const { id } = useParams();
     const producto = productos.find((p) => p.id === parseInt(id));
     const [cantidad, setCantidad] = useState(1);
@@ -53,7 +55,7 @@ export default function InfoProd() {
             </div>
 
             <button className="cursor-target" id="agregar-carrito" onClick={() => {window.scrollTo({ top: 0, behavior: "smooth" });
-                agregarCarrito(producto, cantidad);
+                agregarCarrito(producto, cantidad, carrito, updateCarrito);
                 }}>
             Agregar al carrito </button>
             </div>

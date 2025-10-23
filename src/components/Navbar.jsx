@@ -1,9 +1,25 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
 import logo from "../assets/fotos/Logo_full.png";
+import { useEffect, useState } from "react";
 import carro from "../assets/fotos/icons/carrito.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+    const [usuario, setUsuario] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const usuarioActivo = sessionStorage.getItem("usuarioActivo");
+        if (usuarioActivo) {
+            setUsuario(JSON.parse(usuarioActivo));
+        }
+    }, []);
+
+    const handleLogout = () => {
+        sessionStorage.removeItem("usuarioActivo");
+        setUsuario(null);
+        navigate("/");
+    };
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
@@ -46,7 +62,26 @@ export default function Navbar() {
                     <img src={carro} alt="Carrito" />
                 </a>
                 </li>
-                <li className="nav-item"><a className="nav-link active cursor-target" href="/login">Iniciar sesión</a></li>
+                {usuario ? (
+                            <li className="nav-item dropdown">
+                                <a
+                                    className="nav-link dropdown-toggle active cursor-target"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    {usuario.nombre || "Cuenta"}
+                                </a>
+                                <ul className="dropdown-menu dropdown-menu-end">
+                                    <li><button className="dropdown-item cursor-target" onClick={handleLogout}>Cerrar sesión</button></li>
+                                </ul>
+                            </li>
+                        ) : (
+                            <li className="nav-item">
+                                <a className="nav-link active cursor-target" href="/login">Iniciar sesión</a>
+                            </li>
+                        )}
             </ul>
             </div>
         </div>

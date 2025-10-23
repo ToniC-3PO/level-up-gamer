@@ -2,6 +2,7 @@ import { useState } from "react";
 import productos from "../datos/dataP";
 import { Link } from "react-router-dom";
 import agregarCarrito from "../assets/utils/agregarCarrito";
+import useCarrito from "../assets/utils/useCarrito";
 
 export default function Catalogo() {
     const [busqueda, setBusqueda] = useState("");
@@ -26,6 +27,7 @@ export default function Catalogo() {
         return CCategoria && CBusqueda;
     });
 
+    const [carrito, updateCarrito] = useCarrito();
     return (
         <section className="catalogo">
             <h1>Catalogo</h1>
@@ -59,7 +61,7 @@ export default function Catalogo() {
                             {p.nombre}
                             </Link>
                             <p>${p.precio.toLocaleString("es-CL")}</p>
-                            <button className="cursor-target" id="agregar-carrito" onClick={() =>agregarCarrito(p, 1)}
+                            <button className="cursor-target" id="agregar-carrito" onClick={() => agregarCarrito(p, 1, carrito, updateCarrito)}
                             >Agregar al carrito</button>
                             </div>
                         </div>

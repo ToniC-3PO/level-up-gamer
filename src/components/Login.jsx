@@ -1,30 +1,35 @@
 import "../assets/styles.css";
 import { Link, useNavigate } from "react-router-dom";
 import { obtenerUsuarios } from "../datos/dataUser";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Login() {
     const navigate = useNavigate();
-    
+    const [error, setError] = useState(""); 
     const handleLogin = (e) => {
-        e.preventDefault(); // evita recargar
+        e.preventDefault();
 
         const email = document.getElementById("exampleInputEmail1").value;
         const password = document.getElementById("exampleInputPassword1").value;
 
         const usuarios = obtenerUsuarios();
-
         const usuario = usuarios.find(u => u.email === email && u.password === password);
 
         if (usuario) {
-        // guarda usuario activo en sessionStorage
-        sessionStorage.setItem("usuarioActivo", JSON.stringify(usuario));
-        alert("✅ Inicio de sesión exitoso");
-        // aquí podrías redirigir usando navigate de react-router
-        navigate("/home");
+            sessionStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+            setError("");
+            setTimeout(() => {
+                navigate("/");
+                window.location.reload();
+            }, 1500);
+
+            toast.success("¡Bienvenido de nuevo!");
         } else {
-        alert("⚠️ Email o contraseña incorrectos");
+            setError("Email o contraseña incorrectos");
         }
     };
+
     return (
         <section className="main-container mb-3 my-4">
             <div> 
@@ -36,6 +41,7 @@ export default function Login() {
                     <div className="mb-3 container-fluid">
                         <label htmlfor="InputPassword1" className="form-label" style={{pointerEvents: "none" }}>Contraseña:</label>
                         <input type="password" className="form-control cursor-target" id="exampleInputPassword1" required/>
+                        {error && (<div className="text-danger small mt-1">{error}</div>)}
                     </div>
                     <div className="mb-3 container-fluid">
                             <ul>

@@ -1,22 +1,24 @@
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import useCarrito from "../assets/utils/useCarrito";
 
 export default function Carrito() {
-    const [carrito, setCarrito] = useState([]);
+    const [carrito, updateCarrito] = useCarrito();
 
-    useEffect(() => {
-        const carritoSave = JSON.parse(localStorage.getItem("carrito")) || []; setCarrito(carritoSave);
-        }, []);
-
-    const updateCarrito = (newPCarrito) => {
-        setCarrito(newPCarrito);
-        localStorage.setItem("carrito", JSON.stringify(newPCarrito));
-    };
+    const vaciarCarrito = () => updateCarrito([]);
 
     return (
         <section class="container-fluid">
             <div id="carrito">
                 {carrito.length === 0 ? (
-                <p>Tu carrito está vacío</p>
+                    <section className="container-fluid d-flex justify-content-center align-items-center" style={{ minHeight: "70vh" }}>
+                            <div
+                                className="text-center p-5">
+                                <p className="mb-4">
+                                    Parece que tu carrito está vacío, prueba visitar nuestro cátalogo.
+                                </p>
+                                <Link to="/catalogo" type="button" className="btn btn-primary cursor-target">Cátalogo</Link>
+                            </div>
+                    </section>
                 ) : (
                 carrito.map((p) => (
                     <div className="tarjeta-producto" key={p.id}>
@@ -37,7 +39,7 @@ export default function Carrito() {
                         <p id="total-u">Total unidades: <strong>X</strong></p>
                         <p id="total-p">Total precio: <strong></strong></p>
                         <button>Pagar</button>
-                        <button id="vaciar">Vaciar</button>
+                        <button id="vaciar" onClick={vaciarCarrito}>Vaciar</button>
                     </div>
                     )}
             </div>

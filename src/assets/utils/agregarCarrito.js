@@ -1,13 +1,15 @@
-export default function agregarCarrito(x, y) {
-    const carritoLive = JSON.parse(localStorage.getItem("carrito")) || [];
-    const pExistente = carritoLive.find((p) => p.id === x.id);
+import { toast } from "react-toastify";
+
+export default function agregarCarrito(producto, cantidad, carrito, updateCarrito) {
+    const carritoLive = [...carrito];
+    const pExistente = carritoLive.find(p => p.id === producto.id);
 
     if (pExistente) {
-        pExistente.cantidad += y;
+        pExistente.cantidad += cantidad;
     } else {
-        carritoLive.push({ ...x, cantidad: y });
+        carritoLive.push({ ...producto, cantidad });
     }
 
-    localStorage.setItem("carrito", JSON.stringify(carritoLive));
-    alert("Producto agregado al carrito");
+    updateCarrito(carritoLive);
+    toast.success("Producto agregado al carrito");
 }
