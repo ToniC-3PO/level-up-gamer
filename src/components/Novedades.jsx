@@ -6,18 +6,17 @@ import noticias from "../datos/dataNews";
 import eventos from "../datos/dataEventos";
 
 export default function Novedades() {
-    // Ordenamos y limitamos los datos
     const ultimosBlogs = [...blogs]
         .sort((a, b) => b.id - a.id)
-        .slice(0, 2); // 2 últimos blogs
+        .slice(0, 2); 
 
     const ultimasNoticias = [...noticias]
         .sort((a, b) => b.id - a.id)
-        .slice(0, 2); // 2 últimas noticias
+        .slice(0, 2);
 
     const ultimosEventos = [...eventos]
         .sort((a, b) => b.id - a.id)
-        .slice(0, 8); // 10 últimos eventos
+        .slice(0, 8);
 
     return (
         <section className="mb-5">
