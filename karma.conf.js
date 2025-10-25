@@ -52,7 +52,12 @@ module.exports = function(config) {
       },
       resolve: {
         extensions: ['.js', '.jsx']
-      }
+      },
+      node: {
+            __dirname: true,
+            __filename: true,
+            fs: 'empty' 
+        },
     },
 
     webpackMiddleware: {
