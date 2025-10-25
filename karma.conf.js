@@ -13,7 +13,9 @@ module.exports = function(config) {
     // Archivos a excluir
     exclude: [
       'src/index.js',
-      'src/reportWebVitals.js'
+      'src/reportWebVitals.js',
+      'src/App.test.js', 
+      'src/setupTests.js'
     ],
 
     // Preprocesadores
@@ -47,17 +49,20 @@ module.exports = function(config) {
           {
             test: /\.css$/,
             use: ['style-loader', 'css-loader']
+          },
+          { 
+          test: /\.(jpe?g|png|gif|svg|ttf)$/i, 
+          loader: 'url-loader',
+          options: {
+            esModule: false,
+            limit: 10000 
           }
+        }
         ]
       },
       resolve: {
         extensions: ['.js', '.jsx']
       },
-      node: {
-            __dirname: true,
-            __filename: true,
-            fs: 'empty' 
-        },
     },
 
     webpackMiddleware: {
