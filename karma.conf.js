@@ -6,8 +6,6 @@ module.exports = function(config) {
     // Archivos a incluir en los tests
     files: [
       'src/**/*.spec.js',
-      'src/**/*.js',
-      'src/**/*.jsx'
     ],
 
     // Archivos a excluir
