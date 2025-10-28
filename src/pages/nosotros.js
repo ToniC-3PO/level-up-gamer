@@ -1,5 +1,4 @@
-import "../assets/styles.css";
-import NosotrosC from "../components/NosotrosC";
+import NosotrosC from "../components/organisms/NosotrosC";
 
 export default function Nosotros() {
     return (

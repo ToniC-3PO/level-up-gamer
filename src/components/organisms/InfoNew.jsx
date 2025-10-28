@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import news from "../datos/dataNews";
+import news from "../../datos/dataNews";
 
 export default function InfoNew() {
     const { id } = useParams();
@@ -10,7 +10,7 @@ export default function InfoNew() {
     return (
         <section className="container-fluid my-5">
         <div className="more-news">
-            <Link className="volver-link cursor-target" to="/news">
+            <Link className="volver-link cursor-target" to="/noticias">
             Volver a Noticias
             </Link>
         </div>

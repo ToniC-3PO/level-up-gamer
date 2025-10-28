@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import useCarrito from "../assets/utils/useCarrito";
+import useCarrito from "../../assets/utils/useCarrito";
 
 export default function Carrito() {
     const [carrito, updateCarrito] = useCarrito();

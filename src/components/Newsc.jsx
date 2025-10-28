@@ -4,16 +4,18 @@ import "../assets/styles.css";
 import news from "../datos/dataNews";
 
 export default function Newsc () {
+    const sortedData = [...news].sort((a, b) => b.id - a.id);
+
     return (
         <section className="container-fluid">
         <div className="wrap">
             <div className="mains-news">
                 <h2 className="noticias-titulo">Noticias</h2>
             <div className="body-news">
-                {news.length === 0 ? (
+                {sortedData.length === 0 ? (
                 <p>No hay noticias disponibles</p>
                 ) : (
-                news.map((n) => (
+                sortedData.map((n) => (
                     <article className="news-fecha cursor-target" key={n.id}>
                         <span className="publicacion">{n.fecha}</span>
                     <div>

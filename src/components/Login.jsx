@@ -24,7 +24,7 @@ export default function Login() {
                 window.location.reload();
             }, 1500);
 
-            toast.success("¡Bienvenido de nuevo!");
+            toast.success("¡Bienvenid@ de nuevo!");
         } else {
             setError("Email o contraseña incorrectos");
         }

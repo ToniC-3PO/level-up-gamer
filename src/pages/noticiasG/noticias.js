@@ -1,4 +1,4 @@
-import Newsc from "../components/Newsc";
+import Newsc from "../../components/Newsc";
 
 export default function Noticias(){
     return (

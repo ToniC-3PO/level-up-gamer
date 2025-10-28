@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import { useParams, Link } from "react-router-dom";
-import eventos from "../datos/dataEventos";
+import eventos from "../../datos/dataEventos";
 
 export default function InfoEvento() {
     const { id } = useParams();
@@ -48,7 +48,7 @@ export default function InfoEvento() {
                                 </div>
                                 <div className="info-evento-more">
                                     <h3>Detalles</h3>
-                                    <p className="info-evento-detalle">{evento.detalles}</p>
+                                    <p className="info-evento-detalle">{evento.detalle}</p>
                                 </div>
                             </div>
                         </div>
