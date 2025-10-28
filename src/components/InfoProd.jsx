@@ -6,21 +6,23 @@ import useCarrito from "../assets/utils/useCarrito";
 
 export default function InfoProd() {
     const [carrito, updateCarrito] = useCarrito();
+
     const { id } = useParams();
     const producto = productos.find((p) => p.id === parseInt(id));
+
     const [cantidad, setCantidad] = useState(1);
+
     const [comentarios, setComentarios] = useState([
         { usuario: "Usuario1", texto: "¡Excelente producto, llegó rápido!", rating: 4 },
         { usuario: "Usuario2", texto: "Buen precio y calidad, lo recomiendo.", rating: 4 },
     ]);
-
 
     const [nuevoRating, setNuevoRating] = useState(0);
     const [nuevoComentario, setNuevoComentario] = useState("");
 
     if (!producto) return <p>Producto no encontrado</p>;
 
-    const handleAgregarComentario = (e) => {
+    const AgregarComent = (e) => {
         e.preventDefault();
         if (!nuevoComentario.trim()) return;
         setComentarios([
@@ -78,7 +80,7 @@ export default function InfoProd() {
         </div>
 
         <div className="cursor-target">
-            <form onSubmit={handleAgregarComentario} className="agregar-comentario container-fluid">
+            <form onSubmit={AgregarComent} className="agregar-comentario container-fluid">
             <label htmlFor="nuevo-comentario">Deja tu comentario:</label>
             <div className="puntaje">
             {[5, 4, 3, 2, 1].map((star) => (
