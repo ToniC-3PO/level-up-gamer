@@ -1,5 +1,6 @@
 # Getting Started with Create React App
-
+Parte 2: Projecto Level-Up gamer
+Continuación de -> [https://github.com/KingCevich/Level-Up_Gamer](Level-Up Gamer parte 1)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
