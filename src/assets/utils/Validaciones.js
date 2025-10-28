@@ -3,20 +3,28 @@ const errors = {};
 
   const regEmail =
     /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-  if (!regEmail.test(email)) {
+  if (!email){
+    errors.email = "Correo Obligatorio";
+
+  }else if (!regEmail.test(email)) {
     errors.email = "Correo inválido";
+
   } else if (email.endsWith("@duocuc.cl")) {
     console.log("¡Cuenta Duoc detectada!");
   }
 
   const regPass =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&#]{8,15}/;
-  if (!regPass.test(password)) {
+  if (!password){
+    errors.password = "La contraseña es obligatoria";
+  }else if (!regPass.test(password)) {
     errors.password =
       "La contraseña debe tener entre 8 y 15 caracteres, una mayúscula, una minúscula, un número y un carácter especial.";
   }
-
-  if (confirmPassword !== password) {
+  if(!confirmPassword){
+    errors.confirmPassword = "Ingrese la confirmacion de contraseña"
+  }
+  else if(confirmPassword !== password) {
     errors.confirmPassword = "Las contraseñas no coinciden";
   }
 
